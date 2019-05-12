@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>  // 랜덤 숫자
+#include <time.h>
+
+int main(void)
+{
+	int computer;
+	int user;
+	srand((unsigned)time(NULL));
+	computer = rand() % 3 + 1;
+
+	printf("1=가위, 2=바위, 3=보 중에서 하나를 입력하시오");
+	scanf_s("%d", &user);
+
+	if (computer == 1) {
+	    if (user == 1)
+			printf("비겼습니다.");
+		else if (user == 2)
+			printf("이겼습니다.");
+		else if (user == 3)
+			printf("졌습니다.");
+	}
+	else if (computer == 2) {
+		if (user == 1)
+			printf("졌습니다.");
+		else if (user == 2)
+			printf("비겼습니다.");
+		else if (user == 3)
+			printf("이겼습니다.");
+	}
+	else if (computer == 3) {
+		if (user == 1)
+			printf("이겼습니다.");
+		else if (user == 2)
+			printf("졌습니다.");
+		else if (user == 3)
+			printf("비겼습니다.");
+	}
+	return 0;
+}

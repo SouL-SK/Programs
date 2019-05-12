@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int x, y; //x는 키, y는 나이
+	printf("키를 입력하시오(cm): ");
+	scanf("%d", &x);
+	printf("나이를 입력하시오: ");
+	scanf("%d", &y);
+	//키나 나이 둘다 조건에 안맞으면 안됨
+	if (x >= 140 && y >= 10)
+		printf("타도 괜찮습니다.\n");
+	else
+		printf("죄송합니다.\n");
+
+	return 0;
+}

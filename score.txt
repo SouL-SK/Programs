@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int x; //x는 성적
+
+	printf("성적을 입력하시오: ");
+	scanf_s("%d", &x);
+
+	if (x >= 90)
+		printf("합격 : 학점A\n");
+	else if (x >= 80)
+		printf("합격 : 학점B\n");
+	else if (x >= 70)
+		printf("합격 : 학점C\n");
+	else if (x >= 60)
+		printf("합격 : 학점D\n");
+	else
+		printf("불합격 : 학점F\n");
+	
+	return 0;
+	
+}

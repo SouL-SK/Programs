@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void)
+{//전체를 반복시키면 안되는게 바로 밑에서 0으로 초기화 되버리기에 전에 입력한 데이터가 날아가기 때문이다.
+		int x, y, n, m;
+		char arr[20][20] = { 0 }; 
+		for (n = 0; n < 20; n++) {
+			for (m = 0; m < 20; m++) {
+				if (n == 0 || m == 0 || n == 19 || m == 19) {
+					arr[n][m] = 43;  // + 는 43
+				}
+			}
+		}
+		while (1) {
+			printf("좌표 입력(1~19까지) ");
+			scanf("%d %d", &x, &y);
+			arr[19 - x][y] = 35; // # 은 35
+			n = 0, m = 0;
+			for (n; n < 20; n++) {
+				for (m = 0; m < 20; m++) {
+					printf("%c", arr[n][m]);
+				}
+				printf("\n");
+			}
+		}
+}

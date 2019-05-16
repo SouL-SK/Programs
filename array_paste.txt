@@ -1,0 +1,24 @@
+#include <stdio.h>
+int array_paste(int a[],int b[],int value_size);
+//함수 명시
+int main(void)
+{
+	int size = 10;
+	int a[10] = { 0 };
+	int b[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	for (int n = 0; n < 10; n++) {
+		printf("%d ", b[n]);
+	} //배열 b 출력
+	printf("\n");
+	array_paste(a, b, size); //함수 이용 배열 b에 배열 a 값 대입
+	for (int n = 0; n < 10; n++) {
+		printf("%d ", b[n]);
+	} //배열 b 출력
+	printf("\n");
+	return 0;
+}
+int array_paste(int a[], int b[], int value_size) {
+	for (int m = 0; m < 10; m++) {
+		b[m] = a[m];
+	} //배열 b에 배열 a 의 값을 인덱스 값 1 부터 차례대로 대입
+}

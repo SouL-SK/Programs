@@ -23,37 +23,43 @@
 </head>
 <body>
 <div class="container">
-  <form:form method="post" modelAttribute="student">
-    <div class="title">학생 ${ student.id > 0 ? "수정" : "등록" }</div>
+  <form:form method="post" modelAttribute="person">
+    <div class="title">연락처 ${ person.id > 0 ? "수정" : "등록" }</div>
     <table>
-      <tr>
-        <td>학번:</td>
-        <td><form:input path="studentNumber" /></td>
-      </tr>
       <tr>
         <td>이름:</td>
         <td><form:input path="name" /></td>
       </tr>
       <tr>
-        <td>학과</td>
-        <td><form:select path="departmentId"
-                         itemLabel="departmentName" itemValue="id" items="${ departments }" />
+        <td>유형:</td>
+        <td><form:select path="categoryId"
+                         itemLabel="categoryName" itemValue="id" items="${ categories }" />
+        </td>
       </tr>
       <tr>
-        <td>학년:</td>
-        <td><form:input path="year" /></td>
+        <td>성별:</td>
+        <td><form:radiobutton path="sex" value="남" label="남"/>
+        <form:radiobutton path="sex" value="여" label="여"/></td>
+      </tr>
+      <tr>
+        <td>전화번호:</td>
+        <td><form:input path="phone" /></td>
+      </tr>
+      <tr>
+        <td>이메일:</td>
+        <td><form:input path="email" /></td>
       </tr>
     </table>
     <hr />
     <div>
       <button type="submit" class="btn">저장</button>
-      <c:if test="${ student.id > 0 }">
-        <a href="delete?id=${student.id}" class="btn" 
+      <c:if test="${ person.id > 0 }">
+        <a href="delete?id=${person.id}" class="btn" 
            onclick="return confirm('삭제하시겠습니까?')">삭제</a>
       </c:if>
       <a href="list" class="btn">목록으로</a>
     </div>
-    <div class="error">${ errorMsg }</div>
+    <div class="error">${ errMsg }</div>
   </form:form>
 </div>
 </body>
